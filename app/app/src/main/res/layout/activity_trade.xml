@@ -1,0 +1,33 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/app_backround"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/playerTurnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Ход игрока 1"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/secondsInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите количество секунд"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/lightwhite" />
+
+    <Button
+        android:id="@+id/tradeButton"
+        style="@style/app_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Подтвердить" />
+</LinearLayout>

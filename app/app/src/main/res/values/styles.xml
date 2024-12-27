@@ -1,0 +1,15 @@
+<resources>
+    <style name="app_button" parent="android:Widget.Button">
+        <item name="android:background">@drawable/abc_btn_default_mtrl_shape</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">66dip</item>
+        <item name="android:minWidth">124dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/pink</item>
+    </style>
+
+</resources>
