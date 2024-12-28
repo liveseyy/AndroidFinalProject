@@ -82,8 +82,8 @@ public class MusicPlayActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, trueAnswerResourceID);
         mediaPlayer.start();
 
-        String winnerTradePlayerNumber = player1Bid == playTime ? "1" : "2";
-
+        String winnerTradePlayerNumber = player1Bid == playTime / 1000 ? "1" : "2";
+        Log.d("winnerTradePlayerNumber", String.format("%s %s %s", winnerTradePlayerNumber, playTime, player1Bid));
         String tradeWinnerMessageText;
         tradeWinnerMessageText = String.format(
                 "Победила ставка игрока №%s\nСлушай \uD83C\uDFB5",
@@ -111,6 +111,8 @@ public class MusicPlayActivity extends AppCompatActivity {
                 intent.putExtra("player1Score", player1Score);
                 intent.putExtra("player2Score", player2Score);
                 intent.putExtra("currentPlayer", currentPlayer);
+                intent.putExtra("PLAYER1_BID", player1Bid);
+                intent.putExtra("PLAYER2_BID", player2Bid);
 
                 mStartForResult.launch(intent);
             }
@@ -124,6 +126,8 @@ public class MusicPlayActivity extends AppCompatActivity {
             player1Score = intent.getIntExtra("player1Score", 0);
             player2Score = intent.getIntExtra("player2Score", 0);
             currentPlayer = intent.getIntExtra("currentPlayer", 1);
+            player1Bid = intent.getIntExtra("PLAYER1_BID", 1);
+            player2Bid = intent.getIntExtra("PLAYER2_BID", 1);
             Log.d("BackToMusicPlay", String.format("%s %s %s %s", currentStage, player1Score, player2Score, currentPlayer));
 
             startMusic();
@@ -144,8 +148,8 @@ public class MusicPlayActivity extends AppCompatActivity {
      * При торге за кол-во секунд прослушивания конечный результат выбирается случайно
      */
     private int getMusicPlayTime() {
-        int player1Bid = getIntent().getIntExtra("PLAYER1_BID", 0);
-        int player2Bid = getIntent().getIntExtra("PLAYER2_BID", 0);
+        player1Bid = getIntent().getIntExtra("PLAYER1_BID", 1);
+        player2Bid = getIntent().getIntExtra("PLAYER2_BID", 1);
         ArrayList<Integer> playersBids = new ArrayList<Integer>();
         playersBids.add(player1Bid);
         playersBids.add(player2Bid);

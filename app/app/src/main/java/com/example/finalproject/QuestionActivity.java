@@ -121,6 +121,8 @@ public class QuestionActivity extends AppCompatActivity {
             resultIntent.putExtra("player1Score", player1Score);
             resultIntent.putExtra("player2Score", player2Score);
             resultIntent.putExtra("currentPlayer", currentPlayer);
+            resultIntent.putExtra("PLAYER1_BID", getIntent().getIntExtra("PLAYER1_BID", 1));
+            resultIntent.putExtra("PLAYER2_BID", getIntent().getIntExtra("PLAYER2_BID", 1));
             setResult(RESULT_OK, resultIntent);
         }
 
